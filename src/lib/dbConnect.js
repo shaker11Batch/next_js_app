@@ -1,0 +1,1 @@
+export const mongoUri="mongodb+srv://nextApp:eCh19MOceEz0emXT@cluster0.5qkscdg.mongodb.net/productDB?retryWrites=true&w=majority&appName=Cluster0";
