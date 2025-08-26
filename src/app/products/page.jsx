@@ -1,9 +1,32 @@
-import React from 'react';
 
-const Products = () => {
+
+const getProducts = async () => {
+    let data = await fetch("http://localhost:3000/api/products");
+    data = await data.json();
+    if (data.success) {
+        return data.result
+    }
+    else {
+        return { success: false }
+    }
+}
+
+
+const Products = async () => {
+
+    const products = await getProducts()
+    console.log(products)
+
     return (
         <div>
             <h1 className='text-center my-12'>THis is my products</h1>
+            <div>
+                {
+                    products?.map(product => {
+                        return <div key={product._id}>{product.name}</div>
+                    })
+                }
+            </div>
         </div>
     );
 };

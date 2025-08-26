@@ -15,7 +15,7 @@ const AddProduct = () => {
         const description = e.target.description.value;
         const payload = { name, price, quantity, category, brand, image, description };
         console.log(payload);
-        let result = await fetch('http://localhost:3000/api/hello', {
+        let result = await fetch('http://localhost:3000/api/products', {
             method: "POST",
             body: JSON.stringify(payload)
         })

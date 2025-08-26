@@ -1,10 +1,15 @@
-import ServicesSection from "./page/ServicesSection";
+"use client"
+
+import Subscription from "@/components/Subscription";
+
+
 
 
 export default function Home() {
   return (
     <>
-      <ServicesSection />
+      {/* <ServicesSection /> */}
+      <Subscription/>
     </>
   );
 }
