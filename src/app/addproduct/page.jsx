@@ -15,7 +15,7 @@ const AddProduct = () => {
         const description = e.target.description.value;
         const payload = { name, price, quantity, category, brand, image, description };
         console.log(payload);
-        let result = await fetch('http://localhost:3000/api/products', {
+        let result = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/products`, {
             method: "POST",
             body: JSON.stringify(payload)
         })
@@ -70,11 +70,10 @@ const AddProduct = () => {
                     <input name='brand' type="text" placeholder="Enter brand name"
                         class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 focus:outline-none" />
                 </div>
-
-
+ 
                 <div class="col-span-2">
                     <label class="block text-gray-700 font-medium mb-2">Product Image</label>
-                    <input name='img' type="text" accept="image/*" required
+                    <input name='img' type="text" placeholder='imagebb link' accept="image/*" required
                         class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none file:mr-3 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-blue-600 file:text-white hover:file:bg-blue-700" />
                 </div>
 

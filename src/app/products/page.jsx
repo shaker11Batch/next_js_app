@@ -2,7 +2,7 @@ import ProductCard from "@/components/ProductCard";
 
 
 const getProducts = async () => {
-    let data = await fetch("http://localhost:3000/api/products");
+    let data = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/products`);
     data = await data.json();
     if (data.success) {
         return data.result
