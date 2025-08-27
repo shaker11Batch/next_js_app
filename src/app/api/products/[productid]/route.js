@@ -15,3 +15,17 @@ export async function PUT(request, content) {
     const result = await Product.findOneAndUpdate(filter, payload)
     return NextResponse.json({ result, success: true })
 }
+
+
+
+export async function GET(request, content) {
+
+    const productId = content.params.productid
+    const query = { _id: productId }
+    await mongoose.connect(mongoUri)
+    const result = await Product.findById(query)
+    return NextResponse.json({ result, success: true })
+}
+
+
+

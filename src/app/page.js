@@ -1,6 +1,9 @@
-"use client"
 
+
+import Banner from "@/components/Banner";
 import Subscription from "@/components/Subscription";
+
+import Products from "./products/page";
 
 
 
@@ -8,8 +11,10 @@ import Subscription from "@/components/Subscription";
 export default function Home() {
   return (
     <>
-      {/* <ServicesSection /> */}
-      <Subscription/>
+      <Banner/>
+      <Products></Products>
+      <Subscription />
+      
     </>
   );
 }

@@ -26,7 +26,7 @@ const AddProduct = () => {
     };
 
     return (
-        <div className='max-w-7xl mx-auto'>
+        <div className='max-w-7xl mx-auto mb-8'>
             <h1 className='text-center my-12 font-bold text-4xl'>Add Product</h1>
             <form onSubmit={handleSubmit} class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
@@ -74,7 +74,7 @@ const AddProduct = () => {
 
                 <div class="col-span-2">
                     <label class="block text-gray-700 font-medium mb-2">Product Image</label>
-                    <input name='img' type="file" accept="image/*" required
+                    <input name='img' type="text" accept="image/*" required
                         class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none file:mr-3 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-blue-600 file:text-white hover:file:bg-blue-700" />
                 </div>
 

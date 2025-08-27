@@ -1,3 +1,4 @@
+"use client"
 export default function Subscription() {
   const handleSubmit = (e) => {
     e.preventDefault();

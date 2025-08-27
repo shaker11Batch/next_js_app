@@ -6,14 +6,12 @@ const Navbar = () => {
 
     const links = <>
     <Link href={"/"}><li className='mr-6 font-semibold'>Home</li></Link>
-    <Link href={"/about"}><li className='mr-6 font-semibold'>About</li></Link>
     <Link href={"/products"}><li className='mr-6 font-semibold'>Products</li></Link>
     <Link href={"/addproduct"}><li className='mr-6 font-semibold'>Addproduct</li></Link>
-    <Link href={"/contact"}><li className='mr-6 font-semibold'>Contacts</li></Link>
     </>
 
     return (
-        <div className="navbar bg-base-100 shadow-sm">
+        <div className="navbar bg-base-100 shadow-sm sticky top-0 lg:px-12">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -26,7 +24,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <Link href="/" className='text-xl'>
-                    <Image src={'/assets/logo.svg'} width={107} height={50} />
+                    <Image src={'/assets/logo.svg'} width={107} height={50} alt="coma"/>
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
@@ -35,6 +33,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
+                 <Link href={"/login"}><li className='mr-6 font-semibold'>Login</li></Link>
                 <a className="btn btn-outline rounded-2xl text-amber-500">Appointment</a>
             </div>
         </div>
