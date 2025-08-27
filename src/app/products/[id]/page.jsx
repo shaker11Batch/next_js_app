@@ -6,17 +6,18 @@ import { useParams } from "next/navigation";
 export default function ProductPage() {
   const { id } = useParams(); // get dynamic ID from URL
   const [product, setProduct] = useState(null);
+ const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 
   useEffect(() => {
     if (id) {
-      fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/products/${_id}`)
+      fetch(`${baseUrl}/api/products/${id}`)
         .then((res) => res.json())
           .then((data) => {
               setProduct(data.result)
               console.log(data)
         });
     }
-  }, [id]);
+  }, [id,baseUrl]);
 
   if (!product) return <p className="text-center">Loading...</p>;
 

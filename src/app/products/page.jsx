@@ -1,9 +1,21 @@
 import ProductCard from "@/components/ProductCard";
 
 
-const getProducts = async () => {
-    let data = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/products`);
-    data = await data.json();
+// const getProducts = async () => {
+//     let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL || ""}/api/products`);
+//     data = await data.json();
+//     if (data.success) {
+//         return data.result
+//     }
+//     else {
+//         return { success: false }
+//     }
+// }
+export async function getProducts() {
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+
+    const res = await fetch(`${baseUrl}/api/products`);
+    const data = await res.json();
     if (data.success) {
         return data.result
     }
@@ -11,6 +23,7 @@ const getProducts = async () => {
         return { success: false }
     }
 }
+
 
 
 const Products = async () => {

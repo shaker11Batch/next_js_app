@@ -3,7 +3,7 @@
 import React from 'react';
 
 const AddProduct = () => {
-
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
     const handleSubmit = async (e) => {
         e.preventDefault();
         const name = e.target.name.value;
@@ -15,7 +15,7 @@ const AddProduct = () => {
         const description = e.target.description.value;
         const payload = { name, price, quantity, category, brand, image, description };
         console.log(payload);
-        let result = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/products`, {
+        let result = await fetch(`${baseUrl}/api/products`, {
             method: "POST",
             body: JSON.stringify(payload)
         })
